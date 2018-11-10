@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "scripts" : {
-    "dev" : "nodemon src/index.js",
-    "test" : "echo \"Testing in progress\" && exit 1"
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "echo \"Testing in progress\" && exit 1"
   },
   "devDependencies": {
+    "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "mongoose": "^5.3.4",
