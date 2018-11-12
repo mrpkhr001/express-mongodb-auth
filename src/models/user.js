@@ -8,14 +8,18 @@ const UserSchema = new Schema({
     password: "string"
 });
 
+//Before save run this middle ware to encrypt the password.
 UserSchema.pre("save", function (next) {
+    //Access to user model
     const user = this;
 
+    //Generating salt
     bcrypt.genSalt(10, function (err, salt) {
         if (err) {
             return next(err);
         }
 
+        //Generate hash(encrypted) password with the generated password
         bcrypt.hash(user.password, salt, null, function (err, hash) {
             if (err) {
                 return next(err);
